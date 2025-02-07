@@ -29,4 +29,24 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
     });
 
+    //hover over buttons
+    document.getElementById('checkbox-card').addEventListener('mouseover', function (e) {
+        if (e.target.classList.contains('form-check-label')) {
+            const hover = document.querySelector('.greeting');
+            if (e.target.id == 'brownLabel') {
+                hover.style.color = 'brown';
+            } else if (e.target.id == 'greenLabel') {
+                hover.style.color = 'green';
+            } else if (e.target.id == 'cyanLabel') {
+                hover.style.color = 'cyan';
+            }
+        }
+    });
+    document.getElementById('checkbox-card').addEventListener('mouseout', function (e) {
+        if (e.target.classList.contains('form-check-label')) {
+            const hover = document.querySelector('.greeting');
+            hover.style.color = 'slategray';
+        }
+    });
+
 });
